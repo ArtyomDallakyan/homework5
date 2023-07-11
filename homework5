@@ -9,8 +9,8 @@
 # Display the word frequencies in alphabetical order, along with their corresponding counts.
 
 
-sentence = input("Enter a sentence or a paragraph: ")
-marks = [",", ".", "!", "?"]
+sentence = input("Enter a sentence: ")
+marks = [",", ".", "!", "?", ";", ":"]
 for mark in marks:
     sentence = sentence.replace(mark, "")
 sentence = sentence.lower()   
