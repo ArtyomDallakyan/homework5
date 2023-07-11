@@ -1,0 +1,25 @@
+# Write a Python program that takes a string as input and counts the frequency of each word in the string. The program should store the word frequencies in a dictionary and display the result.
+# Here are the steps to follow:
+# Prompt the user to enter a sentence or a paragraph.
+# Remove any punctuation marks from the input string (e.g., commas, periods, exclamation marks).
+# Convert the string to lowercase to make the word frequency case-insensitive.
+# Split the string into a list of words using the split() method.
+# Create an empty dictionary to store the word frequencies.
+# Iterate over the list of words and update the dictionary with the frequency of each word. If a word is already in the dictionary, increment its count by 1. If it’s not in the dictionary, add it as a new key with a value of 1.
+# Display the word frequencies in alphabetical order, along with their corresponding counts.
+
+
+sentence = input("Enter a sentence or a paragraph: ")
+marks = [",", ".", "!", "?"]
+for mark in marks:
+    sentence = sentence.replace(mark, "")
+sentence = sentence.lower()   
+words = sentence.split() 
+word_freq = {}  
+for word in words:
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+for word in sorted(word_freq):
+    print(word + ": " + str(word_freq[word]))
